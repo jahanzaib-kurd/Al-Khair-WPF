@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Al_Khair_WPF.Properties
+namespace AlKhair.WPF.Properties
 {
 
 

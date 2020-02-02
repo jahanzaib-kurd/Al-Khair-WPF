@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Al_Khair_WPF
+namespace AlKhair.WPF
 {
     /// <summary>
     /// Interaction logic for App.xaml
