@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Button Margin="5,5" Name="btnNavArea" Click="btnNavArea_Click">Areas</Button>
+        </StackPanel>
+        <Frame Grid.Column="1" Name="mainFrame" Background="AliceBlue"></Frame>
     </Grid>
 </Window>

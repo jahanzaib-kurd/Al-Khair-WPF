@@ -14,5 +14,9 @@ namespace ALKhair.BAL
         {
             return Repository.GetAreas();
         }
+        public static Area GetArea(string areaCode)
+        {
+            return Repository.GetArea(areaCode);
+        }
     }
 }

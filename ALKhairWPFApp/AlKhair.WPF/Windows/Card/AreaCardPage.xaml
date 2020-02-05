@@ -1,0 +1,36 @@
+﻿<Window x:Class="AlKhair.WPF.Windows.Card.AreaCardPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlKhair.WPF.Windows.Card"
+        mc:Ignorable="d"
+        Title="Area Card" Height="200" Width="650">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Margin="5" Name="btnCreate">Create</Button>
+            <Button Margin="5" Name="btnDelete">Delete</Button>
+            <Button Margin="5" Name="btnSave">Save</Button>
+            <Button Margin="5" Name="btnUndo">Undo</Button>
+
+        </StackPanel>
+        <!--<WrapPanel  Grid.Row="1">
+            <Label MaxHeight="25" Margin="5" MinWidth="100">Area Code</Label>
+            <TextBox MaxHeight="25" Margin="5" Name="txtAreaCode" MinWidth="200" Text="{Binding Code, Mode=OneWay}"></TextBox>
+            <Label MaxHeight="25" Margin="5" MinWidth="100">Area Name</Label>
+            <TextBox MaxHeight="25" Margin="5" Name="txtAreaName" MinWidth="200" Text="{Binding Name, Mode=OneWay}"></TextBox>
+            <Label MaxHeight="25" Margin="5" MinWidth="100">Description</Label>
+            <TextBox MaxHeight="25" Margin="5" Name="txtDescription" MinWidth="200" Text="{Binding Description, Mode=OneWay}"></TextBox>
+            <Label MaxHeight="25" Margin="5" MinWidth="100">Is Active</Label>
+            <CheckBox MaxHeight="25" Margin="5" Name="chkIsActive" MinWidth="25" IsChecked="{Binding IsActive, Mode=OneWay}"></CheckBox>
+            <Label MaxHeight="25" Margin="5" MinWidth="100">Last Modified On</Label>
+            <Label MaxHeight="25" Margin="5" MinWidth="200" Name="lblModifiedOn" Content="{Binding ModifiedOn, Mode=OneWay}"></Label>
+            <Label MaxHeight="25" Margin="5" MinWidth="100">Created On</Label>
+            <Label MaxHeight="25" Margin="5" MinWidth="200" Name="lblCreatedOn" Content="{Binding CreatedOn, Mode=OneWay}"></Label>
+        </WrapPanel>-->
+    </Grid>
+</Window>
