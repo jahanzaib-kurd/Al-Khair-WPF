@@ -5,32 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AlKhair.WPF.Windows.Card"
         mc:Ignorable="d"
-        Title="Area Card" Height="200" Width="650">
-    <Grid>
+        Title="Area Card" SizeToContent="WidthAndHeight">
+    <Grid Height="Auto" Width="Auto">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            <Button Margin="5" Name="btnCreate">Create</Button>
-            <Button Margin="5" Name="btnDelete">Delete</Button>
-            <Button Margin="5" Name="btnSave">Save</Button>
-            <Button Margin="5" Name="btnUndo">Undo</Button>
-
+        <GroupBox Grid.Row="0" Header="{Binding Code}" Margin="5">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label>Area Code</Label>
+                    <TextBox Name="txtAreaCode" Text="{Binding Code, Mode=TwoWay}"></TextBox>
+                    <Label>Area Name</Label>
+                    <TextBox Name="txtAreaName" Text="{Binding Name, Mode=TwoWay}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label>Description</Label>
+                    <TextBox Name="txtDescription" Text="{Binding Description, Mode=TwoWay}"></TextBox>
+                    <Label>Is Active</Label>
+                    <CheckBox VerticalAlignment="Center" Name="chkIsActive" IsChecked="{Binding IsActive, Mode=TwoWay}"></CheckBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label>Last Modified On</Label>
+                    <Label Style="{StaticResource ValueLabel}" Name="lblModifiedOn" Content="{Binding ModifiedOn, Mode=OneWay}"></Label>
+                    <Label>Created On</Label>
+                    <Label Style="{StaticResource ValueLabel}" Name="lblCreatedOn" Content="{Binding CreatedOn, Mode=OneWay}"></Label>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" FlowDirection="RightToLeft">
+            <Button Margin="5" Name="btnDelete" MaxHeight="25" MinWidth="70">Cancel</Button>
+            <Button Margin="5" Name="btnUndo" MaxHeight="25" MinWidth="70">Undo</Button>
+            <Button Margin="5" Name="btnSave" Style="{StaticResource SaveButton}">Save</Button>
         </StackPanel>
-        <!--<WrapPanel  Grid.Row="1">
-            <Label MaxHeight="25" Margin="5" MinWidth="100">Area Code</Label>
-            <TextBox MaxHeight="25" Margin="5" Name="txtAreaCode" MinWidth="200" Text="{Binding Code, Mode=OneWay}"></TextBox>
-            <Label MaxHeight="25" Margin="5" MinWidth="100">Area Name</Label>
-            <TextBox MaxHeight="25" Margin="5" Name="txtAreaName" MinWidth="200" Text="{Binding Name, Mode=OneWay}"></TextBox>
-            <Label MaxHeight="25" Margin="5" MinWidth="100">Description</Label>
-            <TextBox MaxHeight="25" Margin="5" Name="txtDescription" MinWidth="200" Text="{Binding Description, Mode=OneWay}"></TextBox>
-            <Label MaxHeight="25" Margin="5" MinWidth="100">Is Active</Label>
-            <CheckBox MaxHeight="25" Margin="5" Name="chkIsActive" MinWidth="25" IsChecked="{Binding IsActive, Mode=OneWay}"></CheckBox>
-            <Label MaxHeight="25" Margin="5" MinWidth="100">Last Modified On</Label>
-            <Label MaxHeight="25" Margin="5" MinWidth="200" Name="lblModifiedOn" Content="{Binding ModifiedOn, Mode=OneWay}"></Label>
-            <Label MaxHeight="25" Margin="5" MinWidth="100">Created On</Label>
-            <Label MaxHeight="25" Margin="5" MinWidth="200" Name="lblCreatedOn" Content="{Binding CreatedOn, Mode=OneWay}"></Label>
-        </WrapPanel>-->
     </Grid>
 </Window>

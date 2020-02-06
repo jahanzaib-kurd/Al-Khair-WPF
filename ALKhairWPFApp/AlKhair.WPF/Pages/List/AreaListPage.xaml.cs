@@ -35,7 +35,7 @@ namespace AlKhair.WPF.Pages.List
 
         private void OnAreaCodeLink_Click(object sender, RoutedEventArgs e)
         {
-            TextBlock areaCode = (TextBlock)sender;
+            Button areaCode = (Button)sender;
             var card = new AreaCardPage(areaCode.Tag as string);
             card.Show();
         }
