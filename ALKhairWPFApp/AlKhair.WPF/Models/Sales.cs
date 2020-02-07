@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlKhair.Models.DatabaseModels
+namespace AlKhair.Models
 {
-    public class SalesLine
+    public class Sales
     {
         public int ID { get; set; }
+        public string ReferenceID { get; set; }
 
     }
 }

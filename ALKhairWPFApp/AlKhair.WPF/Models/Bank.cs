@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlKhair.Models.DatabaseModels
+namespace AlKhair.Models
 {
-    public class Inventory
+    public class Bank
     {
         public int ID { get; set; }
-        public string ReferenceID { get; set; }
-        public string ProductID { get; set; }
-        public double Quantity { get; set; }
-        public double Tonage { get; set; }
-        public string Type { get; set; }
+        public string Code { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        //public double BankBalance { get; set; }
+
+
         public DateTime? CreatedOn { get; set; }
         public DateTime? ModifiedOn { get; set; }
         public bool? IsActive { get; set; }

@@ -100,6 +100,22 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DAL\AlKhairDBContext.cs" />
+    <Compile Include="BAL\BusinessModelParser.cs" />
+    <Compile Include="DAL\Repository.cs" />
+    <Compile Include="Models\Area.cs" />
+    <Compile Include="Models\Bank.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Enums\InventoryTransType.cs" />
+    <Compile Include="Models\Enums\ProductType.cs" />
+    <Compile Include="Models\Enums\UnitOfMeasure.cs" />
+    <Compile Include="Models\Inventory.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Purchase.cs" />
+    <Compile Include="Models\PurchaseLine.cs" />
+    <Compile Include="Models\Sales.cs" />
+    <Compile Include="Models\SalesLine.cs" />
+    <Compile Include="Models\Supplier.cs" />
     <Compile Include="Pages\List\AreaListPage.xaml.cs">
       <DependentUpon>AreaListPage.xaml</DependentUpon>
     </Compile>
@@ -142,17 +158,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ALKhair.BAL\ALKhair.BAL.csproj">
-      <Project>{f6cc1847-1218-4084-9dac-53669cbdbd3b}</Project>
-      <Name>ALKhair.BAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ALKhair.Model\ALKhair.Models.csproj">
-      <Project>{e52b3900-e40c-440b-bbb4-58edc36e1c06}</Project>
-      <Name>ALKhair.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Pages\Card\" />
+    <Folder Include="ViewModels\" />
     <Folder Include="Windows\List\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

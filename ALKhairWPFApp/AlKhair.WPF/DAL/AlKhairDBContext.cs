@@ -1,4 +1,4 @@
-﻿using AlKhair.Models.DatabaseModels;
+﻿using AlKhair.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
