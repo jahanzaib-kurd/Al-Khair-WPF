@@ -14,9 +14,20 @@ namespace ALKhair.BAL
         {
             return Repository.GetAreas();
         }
+
         public static Area GetArea(string areaCode)
         {
             return Repository.GetArea(areaCode);
+        }
+
+        public static void SaveArea(Area area)
+        {
+            Repository.SaveArea(area);
+        }
+
+        public static void RemoveArea(string areaCode)
+        {
+            Repository.DeleteArea(areaCode);
         }
     }
 }
