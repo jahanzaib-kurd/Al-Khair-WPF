@@ -3,58 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:AlKhair.WPF"
              StartupUri="Windows/MainWindow.xaml">
+
     <Application.Resources>
-        <Style x:Key="LinkButton" TargetType="Button">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <TextBlock TextDecorations="Underline">
-                <ContentPresenter /></TextBlock>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Foreground" Value="Blue" />
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="true">
-                    <Setter Property="Foreground" Value="Red" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        <Style TargetType="{x:Type TextBox}">
-            <Setter Property="TextAlignment" Value="Left" />
-            <Setter Property="VerticalContentAlignment" Value="Center" />
-            <Setter Property="MinWidth" Value="200" />
-            <Setter Property="MaxHeight" Value="25"/>
-            <Setter Property="Margin" Value="5"/>
-        </Style>
-        <Style TargetType="{x:Type Label}">
-            <Setter Property="MinWidth" Value="125" />
-            <Setter Property="MaxHeight" Value="25"/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="VerticalAlignment" Value="Bottom"/>
-        </Style>
-        <Style x:Key="ValueLabel" TargetType="{x:Type Label}">
-            <Setter Property="MinWidth" Value="200" />
-            <Setter Property="MaxHeight" Value="25"/>
-            <Setter Property="Margin" Value="5"/>
-        </Style>
-        <Style TargetType="{x:Type CheckBox}">
-            <Setter Property="VerticalAlignment" Value="Bottom"/>
-        </Style>
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="MinWidth" Value="70" />
-            <Setter Property="MinHeight" Value="25" />
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontWeight" Value="DemiBold"/>
-        </Style>
-        <Style x:Key="SaveButton" TargetType="{x:Type Button}">
-            <Setter Property="MinWidth" Value="70" />
-            <Setter Property="MinHeight" Value="25" />
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontWeight" Value="DemiBold" />
-            <Setter Property="Background" Value="RoyalBlue" />
-            <Setter Property="Foreground" Value="White"/>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Style.xaml" />
+                <ResourceDictionary Source="/Styles/ButtonStyles.xaml" />
+                <ResourceDictionary Source="/Styles/TextboxStyles.xaml" />
+                <ResourceDictionary Source="/Styles/LabelStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

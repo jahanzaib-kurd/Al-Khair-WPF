@@ -15,7 +15,7 @@
             <StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label>Area Code</Label>
-                    <TextBox Name="txtAreaCode" Text="{Binding Code, Mode=TwoWay}"></TextBox>
+                    <TextBox IsReadOnly="True" Name="txtAreaCode" Text="{Binding Code, Mode=TwoWay}"></TextBox>
                     <Label>Area Name</Label>
                     <TextBox Name="txtAreaName" Text="{Binding Name, Mode=TwoWay}"></TextBox>
                 </StackPanel>
