@@ -4,28 +4,57 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AlKhair.WPF.Pages.List"
-      mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="500"
-      Title="AreaListPage">
+      mc:Ignorable="d"
+      Title="AreaListPage" Height="Auto" Width="Auto">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="55.2"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,-0.4,0.4">
-            <Button Padding="5" Margin="5" Width="50">Create</Button>
-            <Button Padding="5" Margin="5" Width="50">Edit</Button>
-            <Button Padding="5" Margin="5" Width="50">Delete</Button>
-        </StackPanel>
-        <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" Name="dgArea" Grid.Row="1" Margin="10,10" Padding="5" Grid.ColumnSpan="2">
+        <Grid Height="Auto" Width="Auto" Grid.Row="0" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Row="0" Header="{Binding Code}" Margin="5">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Area Code</Label>
+                        <TextBox Name="txtAreaCode" Text="{Binding ElementName = AreaGrid, Path=SelectedItem.Code}"></TextBox>
+                        <Label>Area Name</Label>
+                        <TextBox Name="txtAreaName" Text="{Binding ElementName = AreaGrid, Path=SelectedItem.Name}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Description</Label>
+                        <TextBox Name="txtDescription" Text="{Binding ElementName = AreaGrid, Path=SelectedItem.Description}"></TextBox>
+                        <Label>Is Active</Label>
+                        <CheckBox VerticalAlignment="Center" Name="chkIsActive" IsChecked="{Binding ElementName = AreaGrid, Path=SelectedItem.IsActive}"></CheckBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Last Modified On</Label>
+                        <Label Style="{StaticResource ValueLabel}" Name="lblModifiedOn" Content="{Binding ElementName = AreaGrid, Path=SelectedItem.ModifiedOn}"></Label>
+                        <Label>Created On</Label>
+                        <Label Style="{StaticResource ValueLabel}" Name="lblCreatedOn" Content="{Binding ElementName = AreaGrid, Path=SelectedItem.CreatedOn}"></Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+                        <Button Name="btnCancel" Click="btnCancel_Click">Cancel</Button>
+                        <Button Name="btnDelete" Click="btnDelete_Click" IsEnabled="{Binding ElementName=AreaGrid, Path=SelectedItem}" >Delete</Button>
+                        <Button Name="btnSave" Click="btnSave_Click" Style="{StaticResource SaveButton}">Save</Button>
+                        <Label Name="lblStatus" Content="{Binding Status}"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+        <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" Name="AreaGrid" Grid.Row="1" Margin="10,10" Padding="5">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Code" Width="*">
+                <!--<DataGridTemplateColumn Header="Code" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Click="OnAreaCodeLink_Click" Tag="{Binding Code}" Style="{StaticResource LinkButton}" Content="{Binding Code}"></Button>
+                            <Button Tag="{Binding Code}" Style="{StaticResource LinkButton}" Content="{Binding Code}"></Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
+
+                <DataGridTextColumn Header="Code" Binding="{Binding Code}" Width="*"/>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
                 <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="*"/>
                 <DataGridTextColumn Header="Created On" Binding="{Binding CreatedOn}" Width="*"/>

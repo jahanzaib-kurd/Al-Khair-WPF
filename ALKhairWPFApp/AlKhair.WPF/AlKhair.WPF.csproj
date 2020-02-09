@@ -119,7 +119,6 @@
     <Compile Include="Pages\List\AreaListPage.xaml.cs">
       <DependentUpon>AreaListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\AreaViewModel.cs" />
     <Compile Include="Windows\Card\AreaCardPage.xaml.cs">
       <DependentUpon>AreaCardPage.xaml</DependentUpon>
     </Compile>
@@ -160,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\" />
+    <Folder Include="Interfaces\" />
     <Folder Include="Pages\Card\" />
     <Folder Include="Windows\List\" />
   </ItemGroup>

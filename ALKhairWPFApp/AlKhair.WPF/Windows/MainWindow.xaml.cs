@@ -25,13 +25,13 @@ namespace AlKhair.WPF
         public MainWindow()
         {
             InitializeComponent();
-            BusinessModelParser.GetAreas();
         }
 
         private void btnNavArea_Click(object sender, RoutedEventArgs e)
         {
-
-            mainFrame.Content = new AreaListPage();
+            AreaListPage page = new AreaListPage();
+            page.DataContext = page.Areas;
+            mainFrame.Content = page;
         }
     }
 }
