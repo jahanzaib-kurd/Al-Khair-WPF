@@ -100,6 +100,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\ObservableObject.cs" />
     <Compile Include="DAL\AlKhairDBContext.cs" />
     <Compile Include="BAL\BusinessModelParser.cs" />
     <Compile Include="DAL\Repository.cs" />

@@ -1,15 +1,18 @@
-﻿using System;
+﻿using AlKhair.WPF.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AlKhair.Models
 {
-    public class Area : INotifyPropertyChanged
+    public class Area : ObservableObject
     {
 
 
@@ -38,8 +41,7 @@ namespace AlKhair.Models
             get { return _Code; }
             set
             {
-                _Code = value;
-                OnPropertyChanged("Code");
+                SetProperty(ref _Code, value);
             }
         }
 
@@ -48,8 +50,7 @@ namespace AlKhair.Models
             get { return _Name; }
             set
             {
-                _Name = value;
-                OnPropertyChanged("Name");
+                SetProperty(ref _Name, value);
             }
         }
 
@@ -58,8 +59,7 @@ namespace AlKhair.Models
             get { return _Description; }
             set
             {
-                _Description = value;
-                OnPropertyChanged("Description");
+                SetProperty(ref _Description, value);
             }
         }
 
@@ -68,8 +68,7 @@ namespace AlKhair.Models
             get { return _CreatedOn; }
             set
             {
-                _CreatedOn = value;
-
+                SetProperty(ref _CreatedOn, value);
             }
         }
 
@@ -78,8 +77,7 @@ namespace AlKhair.Models
             get { return _ModifiedOn; }
             set
             {
-                _ModifiedOn = value;
-                OnPropertyChanged("ModifiedOn");
+                SetProperty(ref _ModifiedOn, value);
             }
         }
 
@@ -88,27 +86,10 @@ namespace AlKhair.Models
             get { return _IsActive; }
             set
             {
-                _IsActive = value;
-                OnPropertyChanged("IsActive");
+                SetProperty(ref _IsActive, value);
             }
         }
 
         #endregion
-
-        #region INotifyPropertyChanged Members
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        #endregion    
     }
 }

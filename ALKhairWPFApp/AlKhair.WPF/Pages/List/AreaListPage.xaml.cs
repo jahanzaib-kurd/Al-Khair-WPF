@@ -24,26 +24,20 @@ namespace AlKhair.WPF.Pages.List
     /// <summary>
     /// Interaction logic for AreaListPage.xaml
     /// </summary>
-    public partial class AreaListPage : Page, INotifyPropertyChanged
+    public partial class AreaListPage : Page,INotifyPropertyChanged
     {
         private ObservableCollection<Area> _areaList = null;
 
-        private string _status = null;
+        private string _filterString;
 
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public AreaListPage()
         {
             InitializeComponent();
             GetRecords();
-
-
         }
 
-        public string Status
-        {
-            get { return _status; }
-            set { _status = value; NotifyPropertyChanged("Status"); }
-        }
         public ObservableCollection<Area> Areas
         {
             get { return _areaList; }
@@ -106,20 +100,6 @@ namespace AlKhair.WPF.Pages.List
             //Get the sender observable collection
             ObservableCollection<Area> obsSender = sender as ObservableCollection<Area>;
             NotifyCollectionChangedAction action = e.Action;
-            if (action == NotifyCollectionChangedAction.Add)
-                Status = "New person added";
-            if (action == NotifyCollectionChangedAction.Remove)
-                Status = "Person deleted";
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(String propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (null != handler)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
         }
     }
 }
