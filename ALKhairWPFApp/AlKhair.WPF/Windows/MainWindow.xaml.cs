@@ -1,4 +1,5 @@
 ﻿using AlKhair.WPF.Pages.List;
+using AlKhair.WPF.ViewModels;
 using ALKhair.BAL;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace AlKhair.WPF
         private void btnNavArea_Click(object sender, RoutedEventArgs e)
         {
             AreaListPage page = new AreaListPage();
-            page.DataContext = page.Areas;
+            page.DataContext = new AreaViewModel();
             mainFrame.Content = page;
         }
     }

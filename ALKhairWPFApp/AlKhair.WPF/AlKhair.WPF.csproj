@@ -101,6 +101,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\ObservableObject.cs" />
+    <Compile Include="Commands\SaveAreaCommand.cs" />
     <Compile Include="DAL\AlKhairDBContext.cs" />
     <Compile Include="BAL\BusinessModelParser.cs" />
     <Compile Include="DAL\Repository.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Pages\List\AreaListPage.xaml.cs">
       <DependentUpon>AreaListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AreaViewModel.cs" />
     <Compile Include="Windows\Card\AreaCardPage.xaml.cs">
       <DependentUpon>AreaCardPage.xaml</DependentUpon>
     </Compile>
@@ -159,7 +161,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commands\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Pages\Card\" />
     <Folder Include="Windows\List\" />
