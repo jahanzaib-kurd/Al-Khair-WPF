@@ -19,9 +19,9 @@
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label>Area Code</Label>
-                        <TextBox Name="txtAreaCode" Text="{Binding ElementName = AreaGrid, Path=SelectedItem.Code}"></TextBox>
+                        <TextBox Name="txtAreaCode" Validation.ErrorTemplate="{StaticResource errorTemplate}" Text="{Binding ElementName = AreaGrid, Path=SelectedItem.Code,  ValidatesOnDataErrors=True ,UpdateSourceTrigger=PropertyChanged }"></TextBox>
                         <Label>Area Name</Label>
-                        <TextBox Name="txtAreaName" Text="{Binding ElementName = AreaGrid, Path=SelectedItem.Name}"></TextBox>
+                        <TextBox Name="txtAreaName" Validation.ErrorTemplate="{StaticResource errorTemplate}" Text="{Binding ElementName = AreaGrid, Path=SelectedItem.Name,  ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged }"></TextBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label>Description</Label>

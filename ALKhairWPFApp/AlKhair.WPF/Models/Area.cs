@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace AlKhair.Models
 {
-    public class Area : ObservableObject
+    public class Area : ObservableObject, IDataErrorInfo
     {
 
 
@@ -24,6 +24,27 @@ namespace AlKhair.Models
         private DateTime? _CreatedOn;
         private DateTime? _ModifiedOn;
         private bool? _IsActive;
+
+        public string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case "Code":
+                        if (string.IsNullOrWhiteSpace(Code))
+                            return "Code cannot be empty";
+                        break;
+
+                    case "Name":
+                        if (string.IsNullOrWhiteSpace(Name))
+                            return "Name cannot be empty";
+                        break;
+                }
+                return null;
+            }
+        }
+
         #endregion
 
         #region Public Members
@@ -87,6 +108,14 @@ namespace AlKhair.Models
             set
             {
                 SetProperty(ref _IsActive, value);
+            }
+        }
+
+        public string Error
+        {
+            get
+            {
+                return null;
             }
         }
 
